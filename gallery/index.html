@@ -179,6 +179,16 @@ div.gallery video:hover {
 </footer>
 
 <script>
+
+//Modal Video Gallery
+function onClick(element) {
+  // Update the source of the video element
+  document.getElementById("video01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.getAttribute("data-caption");
+}
+
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
