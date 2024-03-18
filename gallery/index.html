@@ -27,27 +27,6 @@ body, html {
   padding: 16px;
 }
 
-div.gallery {
-  margin: 5px;
-  border: 1px solid #ccc;
-  float: left;
-  width: 40%;
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -121,43 +100,15 @@ div.desc {
   <!-- End of repeated content on each page-->
 <body>
   
-  <!-- <div class="gallery">
-    <a target="_blank" href="img/corgi.webp">
-      <img src="img/corgi.webp" alt="Corgi" onclick="onClick(this)" width="600%" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
-  
-  <div class="gallery">
-    <a target="_blank" href="img/husky.webp">
-      <img src="img/husky.webp" alt="Husky" onclick="onClick(this)" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
-  
-  <div class="gallery">
-    <a target="_blank" href="img/samoyed.webp">
-      <img src="img/samoyed.webp" alt="Samoyed" onclick="onClick(this)" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
-  
-  <div class="gallery">
-    <a target="_blank" href="img/akita.jpg">
-      <img src="img/akita.jpg" alt="Akita" onclick="onClick(this)" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div> -->
-
   <div>
-    <img src="img/corgi.webp" alt="Image 1" onclick="onClick(this)" style="width:50%;">
-    <img src="img/husky.webp" alt="Image 2" onclick="onClick(this)" style="width:50%;">
-    <img src="img/samoyed.webp" alt="Image 3" onclick="onClick(this)" style="width:50%;">
-    <img src="img/akita.jpg" alt="Image 4" onclick="onClick(this)" style="width:50%;">
+    <img src="img/corgi.webp" alt="Image 1" onclick="onClick(this)" style="width:40%;">
+    <img src="img/husky.webp" alt="Image 2" onclick="onClick(this)" style="width:40%;">
+    <img src="img/samoyed.webp" alt="Image 3" onclick="onClick(this)" style="width:40%;">
+    <img src="img/akita.jpg" alt="Image 4" onclick="onClick(this)" style="width:40%;">
   </div>
   
   <!-- The Modal -->
-  <div id="modal01" class="modal">
+  <div id="modal01" class="modal" onclick="closeModal(event)">
     <span class="close" onclick="document.getElementById('modal01').style.display='none'">&times;</span>
     <img class="modal-content" id="img01">
     <div id="caption"></div>
@@ -178,6 +129,14 @@ function onClick(element) {
   document.getElementById("modal01").style.display = "block";
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
+}
+
+// Close modal when clicking outside the image
+function closeModal(event) {
+  var modal = document.getElementById('modal01');
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 // Toggle between showing and hiding the sidebar when clicking the menu icon
