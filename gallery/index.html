@@ -48,11 +48,40 @@ div.desc {
   text-align: center;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+}
 
 </style>
 
 
 <body>
+  <!-- https://codepen.io/TheMOZZARELLA/pen/oNpMxyy -->
 <!-- If you change something in the Navbar you have to change it on each page (sit on top) -->
 <!-- MAKE SURE YOU GET THE RELATIVE PATHS RIGHT FOR THE NAV BAR!!!!-->
 <div class="w3-top">
@@ -92,7 +121,7 @@ div.desc {
   <!-- End of repeated content on each page-->
 <body>
   
-  <div class="gallery">
+  <!-- <div class="gallery">
     <a target="_blank" href="img/corgi.webp">
       <img src="img/corgi.webp" alt="Corgi" onclick="onClick(this)" width="600%" height="400">
     </a>
@@ -118,6 +147,20 @@ div.desc {
       <img src="img/akita.jpg" alt="Akita" onclick="onClick(this)" width="600" height="400">
     </a>
     <div class="desc">Add a description of the image here</div>
+  </div> -->
+
+  <div>
+    <img src="img/corgi.webp" alt="Image 1" onclick="onClick(this)" style="width:50%;">
+    <img src="img/husky.webp" alt="Image 2" onclick="onClick(this)" style="width:50%;">
+    <img src="img/samoyed.webp" alt="Image 3" onclick="onClick(this)" style="width:50%;">
+    <img src="img/akita.jpg" alt="Image 4" onclick="onClick(this)" style="width:50%;">
+  </div>
+  
+  <!-- The Modal -->
+  <div id="modal01" class="modal">
+    <span class="close" onclick="document.getElementById('modal01').style.display='none'">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
   </div>
 
 </body>
