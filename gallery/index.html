@@ -27,6 +27,25 @@ body, html {
   padding: 16px;
 }
 
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 100%;
+}
+
+div.gallery img {
+  width: 40%;
+  margin: 5px;
+  height: auto;
+}
+
+div.gallery video {
+  width: 40%;
+  margin: 5px;
+  height: auto;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -100,7 +119,7 @@ body, html {
   <!-- End of repeated content on each page-->
 <body>
   
-  <div>
+  <div class = "gallery">
     <video width="40%" autoplay muted>
       <source src="img/wall_follower.mp4" type="video/mp4">
     Your browser does not support the video tag.
